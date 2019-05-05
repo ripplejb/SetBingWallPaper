@@ -2,11 +2,13 @@
 
 import urllib3
 import json
+from pathlib import Path
+
 from gi.repository import Gio
 
 baseUrl = "https://www.bing.com"
 imageDataUrl = "/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=en-US"
-fileLocation = "~/Pictures/bing.jpg"
+fileLocation = str(Path.home())+"/Pictures/bing.jpg"
 
 def getImageUrl(url):
     http = urllib3.PoolManager()
@@ -28,4 +30,3 @@ def setImageAsWallPaper(filepath):
 url = getImageUrl(baseUrl + imageDataUrl)
 downloadAndSaveImageData(baseUrl+url, fileLocation)
 setImageAsWallPaper(fileLocation)
-
