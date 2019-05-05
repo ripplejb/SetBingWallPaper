@@ -6,7 +6,7 @@ from gi.repository import Gio
 
 baseUrl = "https://www.bing.com"
 imageDataUrl = "/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=en-US"
-fileLocation = "/home/ripal/Pictures/bing.jpg"
+fileLocation = "~/Pictures/bing.jpg"
 
 def getImageUrl(url):
     http = urllib3.PoolManager()
